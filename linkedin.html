@@ -1,0 +1,80 @@
+<head>
+  <title>LinkedIn Crawler</title>
+  <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="//cdn.datatables.net/1.10.0/css/jquery.dataTables.css">
+  <script src="//cdn.datatables.net/1.10.0/js/jquery.dataTables.js"></script>
+  <script src="//cdn.datatables.net/plug-ins/be7019ee387/api/fnFindCellRowIndexes.js"></script>
+</head>
+
+<body>
+<h1>LinkedIn Crawler</h1>
+<div>
+  {{>search}}
+  {{>status}}
+</div>
+{{>persons}}
+</body>
+
+<template name="search">
+  <div id="search">
+    <h2>Search</h2>
+    <form class="search" novalidate>
+      <div id="error"></div>
+      <div class="credentials">
+        <div>
+          <label for="email">Email address</label>
+          <input type="email" class="form-control" id="email" placeholder="Enter email">
+        </div>
+
+        <div>
+          <label for="password">Password</label>
+          <input type="password" class="form-control" id="password" placeholder="Password">
+        </div>
+      </div>
+
+      <div class="payload">
+        <div>
+          <label for="text">Search query</label>
+          <input type="text" class="form-control" id="text" placeholder="Enter search query">
+        </div>
+        <div>
+          <label for="text">Limit (0 => unlimited)</label>
+          <input type="text" class="form-control" id="limit" placeholder="Maximum profile viewed" value="100">
+        </div>
+      </div>
+      <button type="submit" class="btn btn-default" disabled>Crawl</button>
+    </form>
+  </div>
+</template>
+
+<template name="status">
+  <div id="status">
+    <i class="fa fa-spinner fa-spin"></i>
+    <span id="log"></span>
+    <span id="log2"></span>
+    <span id="loop"></span>
+    <span id="added"></span>
+    <div id="ratio"><div class="rtotal"></div><div class="rviewed"></div><span></span></div>
+    <button class="btn btn-default">STOP</button>
+  </div>
+</template>
+
+<template name="persons">
+  <div id="res">
+    <h2>Crawled profiles ({{count}})</h2>
+    <table class="table table-striped table-bordered table-condensed table-hover listing" id="persons">
+      <thead>
+      <tr>
+        <th></th>
+        <th></th>
+        <th>Last Name</th>
+        <th>First Name</th>
+        <th>Informations</th>
+        <th>Last visit</th>
+      </tr>
+      </thead>
+      <tbody>
+      </tbody>
+    </table>
+  </div>
+</template>
