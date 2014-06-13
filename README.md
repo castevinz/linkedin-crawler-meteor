@@ -10,3 +10,24 @@ This application allows the user to automatically login to LinkedIn, perform a s
 Profiles are displayed into a dynamic array and saved in a mongo database.
 
 View the [blog aticle](http://jb.demonte.fr/blog/linkedin-crawler-meteor-js/).
+
+
+Installation
+------------
+
+Clone the project:
+```bash
+git clone git@github.com:jbdemonte/linkedin-crawler-meteor.git
+```
+
+Install dependencies:
+```bash
+cd linkedin-crawler-meteor
+mrt install
+```
+
+Run the project
+```bash
+cd linkedin-crawler-meteor
+meteor
+```
