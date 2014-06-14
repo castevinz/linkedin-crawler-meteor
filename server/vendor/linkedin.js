@@ -107,13 +107,6 @@ unescape = function (a) {
   return a.replace(RegExp("\\\\u002d", "gi"), "-").replace(RegExp("&amp;", "gi"), "&");
 };
 
-escape = function (a) {
-  return a.replace(RegExp("-", "gi"), "\\u002d").replace(RegExp("&", "gi"), "&amp;");
-};
-
-
-
-
 var jsRandomCalculator = (function () {
   function compute(n, email, ts) {
     try {
@@ -214,11 +207,4 @@ addLinkedInChecksums = function (params) {
   params.client_output = m;
   params.client_n = l;
   params.client_v = p;
-};
-
-/**
- * Unescape function simplified from fizzy.js
- */
-unescape = function (a) {
-  return a.replace(RegExp("\\\\u002d", "gi"), "-").replace(RegExp("&amp;", "gi"), "&");
 };
